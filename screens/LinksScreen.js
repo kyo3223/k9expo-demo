@@ -15,6 +15,8 @@ export default class LinksScreen extends React.Component {
         <ExpoLinksView />
         <Button onPress={()=>{console.log(this.props);
           this.props.navigation.navigate('Settings'); }} title="test"/>
+        <Button onPress={()=>{
+          this.props.navigation.navigate('MyOrder'); }} title="测试"/>
       </ScrollView>
     );
   }
