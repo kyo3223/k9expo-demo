@@ -2,6 +2,13 @@
   "name": "k9expo-demo",
   "version": "0.1.0",
   "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
+    "test": "node node_modules/jest/bin/jest.js"
+  },
   "private": true,
   "dependencies": {
     "@expo/samples": "2.1.1",
