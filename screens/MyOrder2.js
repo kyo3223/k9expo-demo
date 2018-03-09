@@ -6,17 +6,17 @@ import {
     Button,
     View,
 } from 'react-native';
-export default class MyOrder extends React.Component {
+export default class MyOrder2 extends React.Component {
     static navigationOptions = {
-        title: '测试',
+        title: '完成',
     };
 
     render() {
         return (
             <ScrollView style={styles.container}>
-                <Text>测试</Text>
+                <Text>完成</Text>
                 <Button onPress={()=>{
-                  this.props.navigation.navigate('MyOrder2'); }} title="下一步"/>
+                  this.props.navigation.navigate('Main'); }} title="主页"/>
             </ScrollView>);
     }
 }
