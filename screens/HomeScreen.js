@@ -7,11 +7,14 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Dimensions,
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
+import Swiper from 'react-native-swiper'
 import { MonoText } from '../components/StyledText';
 
+const { width } = Dimensions.get('window')
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
@@ -31,35 +34,30 @@ export default class HomeScreen extends React.Component {
               style={styles.welcomeImage}
             />
           </View>
-
-          <View style={styles.getStartedContainer}>
-            {this._maybeRenderDevelopmentModeWarning()}
-
-            <Text style={styles.getStartedText}>Get started by opening</Text>
-
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-              <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
+{/*
+          <Swiper style={styles.wrapper} height={240}
+            onMomentumScrollEnd={(e, state, context) => console.log('index:', state.index)}
+            dot={<View style={{ backgroundColor: 'rgba(0,0,0,.2)', width: 5, height: 5, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3 }} />}
+            activeDot={<View style={{ backgroundColor: '#000', width: 8, height: 8, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3 }} />}
+            paginationStyle={{
+              bottom: -23, left: null, right: 10
+            }} loop>
+            <View style={styles.slide} title={<Text numberOfLines={1}>Aussie tourist dies at Bali hotel</Text>}>
+              <Image resizeMode='stretch' style={styles.image} source={require('../assets/images/robot-dev.png')} />
             </View>
-
-            <Text style={styles.getStartedText}>
-              Change this text and your app will automatically reload.
-            </Text>
-          </View>
-
-          <View style={styles.helpContainer}>
-            <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
-            </TouchableOpacity>
-          </View>
+            <View style={styles.slide} title={<Text numberOfLines={1}>Big lie behind Nine’s new show</Text>}>
+              <Image resizeMode='stretch' style={styles.image} source={require('../assets/images/robot-prod.png')} />
+            </View>
+            <View style={styles.slide} title={<Text numberOfLines={1}>Why Stone split from Garfield</Text>}>
+              <Image resizeMode='stretch' style={styles.image} source={require('../assets/images/robot-dev.png')} />
+            </View>
+            <View style={styles.slide} title={<Text numberOfLines={1}>Learn from Kim K to land that job</Text>}>
+              <Image resizeMode='stretch' style={styles.image} source={require('../assets/images/robot-prod.png')} />
+            </View>
+          </Swiper>
+          */}
         </ScrollView>
 
-        <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
-
-          <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-            <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
-          </View>
-        </View>
       </View>
     );
   }
@@ -185,4 +183,16 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#2e78b7',
   },
+  
+  wrapper: {
+  },
+  slide: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: 'transparent'
+  },
+  image: {
+    width,
+    flex: 1
+  }
 });
